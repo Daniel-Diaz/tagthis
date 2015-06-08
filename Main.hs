@@ -27,6 +27,6 @@ tagthis fp = do
     ParseOk _ c -> do
       let v = showVersion $ pkgVersion $ package $ packageDescription c
       system $ "git tag -a v" ++ v ++ " -m 'Version " ++ v ++ " of package " ++ n ++ "'."
-      system $ "git show v" ++ v
+      -- system $ "git show v" ++ v
       system "git push --tags"
       putStrLn "tagthis ended."
